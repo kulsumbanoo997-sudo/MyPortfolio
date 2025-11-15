@@ -15,11 +15,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add scroll effect to navbar
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-    if (window.scrollY > 40) {
-        navbar.classList.add('scrolled');
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
     } else {
-        navbar.classList.remove('scrolled');
+        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
     }
 });
 
@@ -29,18 +28,18 @@ const observerOptions = {
     rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
 
-// Elements we want to reveal
-const revealSelectors = ['.animate-fade-up', '.education-card', '.project-card', '.about-content', '.cert-card'];
-document.querySelectorAll(revealSelectors.join(',')).forEach(el => {
-    el.classList.add('pre-reveal');
+document.querySelectorAll('.education-card, .about-content').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
