@@ -123,23 +123,29 @@ if (scrollTopBtn) {
     });
 }
 
-// Custom Cursor
+// Custom Cursor - Enhanced
 const cursor = document.querySelector('.custom-cursor');
 const cursorTrail = document.querySelector('.cursor-trail');
 let mouseX = 0, mouseY = 0;
 let trailX = 0, trailY = 0;
+let trailHistory = [];
 
 if (cursor && cursorTrail && window.innerWidth > 768) {
     function updateCursor() {
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top = mouseY + 'px';
+        if (cursor) {
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        }
         
-        // Smooth trail animation
-        trailX += (mouseX - trailX) * 0.15;
-        trailY += (mouseY - trailY) * 0.15;
-        cursorTrail.style.left = trailX + 'px';
-        cursorTrail.style.top = trailY + 'px';
-        cursorTrail.style.opacity = '0.6';
+        // Enhanced trail animation with history
+        trailX += (mouseX - trailX) * 0.12;
+        trailY += (mouseY - trailY) * 0.12;
+        
+        if (cursorTrail) {
+            cursorTrail.style.left = trailX + 'px';
+            cursorTrail.style.top = trailY + 'px';
+            cursorTrail.style.opacity = '0.7';
+        }
         
         requestAnimationFrame(updateCursor);
     }
@@ -151,14 +157,20 @@ if (cursor && cursorTrail && window.innerWidth > 768) {
     
     updateCursor();
     
-    // Hover effects on interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .education-card, .contact-link');
+    // Enhanced hover effects on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .education-card, .experience-card, .contact-link, .cert-card');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            if (cursor) cursor.classList.add('hover');
+            if (cursor) {
+                cursor.classList.add('hover');
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            }
         });
         el.addEventListener('mouseleave', () => {
-            if (cursor) cursor.classList.remove('hover');
+            if (cursor) {
+                cursor.classList.remove('hover');
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            }
         });
     });
 }
@@ -184,7 +196,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// 3D Tilt Effect on Cards
+// Enhanced 3D Tilt Effect on Cards
 const cards = document.querySelectorAll('.project-card, .education-card, .experience-card, .skill-category');
 cards.forEach(card => {
     card.addEventListener('mousemove', function(e) {
@@ -195,14 +207,17 @@ cards.forEach(card => {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
+        const rotateX = (y - centerY) / 15;
+        const rotateY = (centerX - x) / 15;
         
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+        // Enhanced 3D effect with better perspective
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.03)`;
+        card.style.transition = 'none';
     });
     
     card.addEventListener('mouseleave', function() {
         card.style.transform = '';
+        card.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
     });
 });
 
