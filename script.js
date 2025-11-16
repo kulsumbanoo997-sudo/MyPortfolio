@@ -1,16 +1,3 @@
-// Page Loader
-window.addEventListener('load', function() {
-    const loader = document.querySelector('.page-loader');
-    if (loader) {
-        setTimeout(() => {
-            loader.classList.add('hidden');
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        }, 800);
-    }
-});
-
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -36,6 +23,74 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navbar = document.querySelector('.navbar');
+    const navLinksItems = document.querySelectorAll('.nav-links a');
+    
+    if (mobileMenuToggle && navLinks && navbar) {
+        // Toggle menu
+        mobileMenuToggle.addEventListener('click', function() {
+            const isActive = mobileMenuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navbar.classList.toggle('menu-open');
+            mobileMenuToggle.setAttribute('aria-expanded', isActive);
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking on a link
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                navbar.classList.remove('menu-open');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (navLinks.classList.contains('active')) {
+                const isClickInsideNav = navLinks.contains(e.target);
+                const isClickOnToggle = mobileMenuToggle.contains(e.target);
+                
+                if (!isClickInsideNav && !isClickOnToggle) {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    navbar.classList.remove('menu-open');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                navbar.classList.remove('menu-open');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Prevent body scroll when menu is open
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                navbar.classList.remove('menu-open');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+});
+
 // Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
@@ -51,11 +106,24 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Elements we want to reveal
-const revealSelectors = ['.animate-fade-up', '.education-card', '.about-content', '.cert-card', '.project-card', '.skill-category', '.experience-card', '.resume-content'];
+// Elements we want to reveal (exclude hero section elements)
+const revealSelectors = ['.education-card', '.about-content', '.cert-card', '.project-card', '.skill-category', '.experience-card', '.resume-content'];
 document.querySelectorAll(revealSelectors.join(',')).forEach(el => {
     el.classList.add('pre-reveal');
     observer.observe(el);
+});
+
+// Handle hero section elements separately - make them visible immediately if in viewport
+document.querySelectorAll('.hero .animate-fade-up').forEach(el => {
+    // Check if element is already in viewport
+    const rect = el.getBoundingClientRect();
+    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isInViewport) {
+        el.classList.add('is-visible');
+    } else {
+        el.classList.add('pre-reveal');
+        observer.observe(el);
+    }
 });
 
 // Typewriter effect for hero name
@@ -222,137 +290,183 @@ cards.forEach(card => {
 });
 
 // Certificate Gallery Modal
-const certModal = document.getElementById('certModal');
-const certCards = document.querySelectorAll('.cert-card');
-let currentRotation = 0;
-let currentZoom = 1;
-
-// Open modal on card click
-certCards.forEach(card => {
-    card.addEventListener('click', function() {
-        const certSrc = this.dataset.cert;
-        const certTitle = this.dataset.title;
-        const certIssuer = this.dataset.issuer;
-        const certDesc = this.dataset.desc;
-        
-        const modal = document.getElementById('certModal');
-        const modalPdfViewer = modal.querySelector('.cert-pdf-viewer');
-        const modalImg = modal.querySelector('.cert-image');
-        const modalTitle = modal.querySelector('.cert-modal-title');
-        const modalIssuer = modal.querySelector('.cert-modal-issuer');
-        const modalDesc = modal.querySelector('.cert-modal-desc');
-        const downloadBtn = modal.querySelector('.cert-download-btn');
-        
-        const certControls = modal.querySelector('.cert-controls');
-        
-        // Check if it's a PDF file
-        if (certSrc.toLowerCase().endsWith('.pdf')) {
-            // Show PDF viewer, hide image
-            modalPdfViewer.style.display = 'block';
-            modalImg.style.display = 'none';
-            modalPdfViewer.src = certSrc + '#toolbar=0&navpanes=0&scrollbar=1';
-            // Hide rotate/zoom controls for PDFs (browser handles navigation)
-            if (certControls) certControls.style.display = 'none';
-        } else {
-            // Show image, hide PDF viewer
-            modalPdfViewer.style.display = 'none';
-            modalImg.style.display = 'block';
-            modalImg.src = certSrc;
-            // Show rotate/zoom controls for images
-            if (certControls) certControls.style.display = 'flex';
-        }
-        
-        modalTitle.textContent = certTitle;
-        modalIssuer.textContent = certIssuer;
-        modalDesc.textContent = certDesc;
-        downloadBtn.href = certSrc;
-        downloadBtn.download = certTitle.replace(/\s+/g, '_') + '.pdf';
-        
-        // Reset rotation and zoom
-        currentRotation = 0;
-        currentZoom = 1;
-        updateImageTransform();
-        
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-});
-
-// Close modal
-const closeModal = () => {
-    certModal.classList.remove('active');
-    document.body.style.overflow = '';
-    currentRotation = 0;
-    currentZoom = 1;
-};
-
-certModal.querySelector('.cert-modal-close').addEventListener('click', closeModal);
-certModal.querySelector('.cert-modal-overlay').addEventListener('click', closeModal);
-
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && certModal.classList.contains('active')) {
-        closeModal();
+document.addEventListener('DOMContentLoaded', function() {
+    const certModal = document.getElementById('certModal');
+    if (!certModal) {
+        console.error('Certificate modal not found');
+        return;
     }
-});
-
-// Rotate certificate
-const rotateBtn = certModal.querySelector('.cert-rotate-btn');
-rotateBtn.addEventListener('click', function() {
-    currentRotation += 90;
-    if (currentRotation >= 360) currentRotation = 0;
-    updateImageTransform();
-});
-
-// Reset rotation
-const resetBtn = certModal.querySelector('.cert-reset-btn');
-resetBtn.addEventListener('click', function() {
-    currentRotation = 0;
-    currentZoom = 1;
-    updateImageTransform();
-});
-
-// Zoom in
-const zoomInBtn = certModal.querySelector('.cert-zoom-in-btn');
-zoomInBtn.addEventListener('click', function() {
-    currentZoom = Math.min(currentZoom + 0.25, 3);
-    updateImageTransform();
-});
-
-// Zoom out
-const zoomOutBtn = certModal.querySelector('.cert-zoom-out-btn');
-zoomOutBtn.addEventListener('click', function() {
-    currentZoom = Math.max(currentZoom - 0.25, 0.5);
-    updateImageTransform();
-});
-
-// Update image transform
-function updateImageTransform() {
-    const certImage = certModal.querySelector('.cert-image');
-    if (certImage && certImage.style.display !== 'none') {
-        certImage.style.transform = `rotate(${currentRotation}deg) scale(${currentZoom})`;
-    }
-    // Note: PDF rotation/zoom is handled by browser's PDF viewer controls
-}
-
-// Keyboard shortcuts for modal
-document.addEventListener('keydown', function(e) {
-    if (!certModal.classList.contains('active')) return;
     
-    if (e.key === 'r' || e.key === 'R') {
-        e.preventDefault();
-        rotateBtn.click();
+    const certCards = document.querySelectorAll('.cert-card');
+    let currentRotation = 0;
+    let currentZoom = 1;
+
+    // Close modal function (defined early so it can be used in event handlers)
+    const closeModal = () => {
+        if (certModal) {
+            certModal.classList.remove('active');
+            document.body.style.overflow = '';
+            currentRotation = 0;
+            currentZoom = 1;
+            
+            // Clear iframe src to prevent memory leaks
+            const modalPdfViewer = certModal.querySelector('.cert-pdf-viewer');
+            if (modalPdfViewer) {
+                modalPdfViewer.src = '';
+            }
+        }
+    };
+
+    // Update image transform function
+    function updateImageTransform() {
+        const certImage = certModal.querySelector('.cert-image');
+        if (certImage && certImage.style.display !== 'none') {
+            certImage.style.transform = `rotate(${currentRotation}deg) scale(${currentZoom})`;
+        }
     }
-    if (e.key === '0') {
-        e.preventDefault();
-        resetBtn.click();
+
+    // Open modal on card click
+    certCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const certSrc = this.dataset.cert;
+            const certTitle = this.dataset.title;
+            const certIssuer = this.dataset.issuer;
+            const certDesc = this.dataset.desc;
+            
+            if (!certSrc) {
+                console.error('Certificate source not found');
+                return;
+            }
+            
+            const modalPdfViewer = certModal.querySelector('.cert-pdf-viewer');
+            const modalImg = certModal.querySelector('.cert-image');
+            const modalTitle = certModal.querySelector('.cert-modal-title');
+            const modalIssuer = certModal.querySelector('.cert-modal-issuer');
+            const modalDesc = certModal.querySelector('.cert-modal-desc');
+            const downloadBtn = certModal.querySelector('.cert-download-btn');
+            const certControls = certModal.querySelector('.cert-controls');
+            
+            // Update modal content
+            if (modalTitle) modalTitle.textContent = certTitle || 'Certificate';
+            if (modalIssuer) modalIssuer.textContent = certIssuer || '';
+            if (modalDesc) modalDesc.textContent = certDesc || '';
+            if (downloadBtn) {
+                downloadBtn.href = certSrc;
+                downloadBtn.download = (certTitle || 'certificate').replace(/\s+/g, '_') + '.pdf';
+            }
+            
+            // Check if it's a PDF file
+            if (certSrc.toLowerCase().endsWith('.pdf')) {
+                // Show PDF viewer, hide image
+                if (modalPdfViewer) {
+                    modalPdfViewer.style.display = 'block';
+                    modalPdfViewer.src = certSrc + '#toolbar=1&navpanes=1&scrollbar=1';
+                    modalPdfViewer.onerror = function() {
+                        // Fallback: open in new window if iframe fails
+                        window.open(certSrc, '_blank');
+                        closeModal();
+                    };
+                }
+                if (modalImg) modalImg.style.display = 'none';
+                if (certControls) certControls.style.display = 'none';
+            } else {
+                // Show image, hide PDF viewer
+                if (modalPdfViewer) modalPdfViewer.style.display = 'none';
+                if (modalImg) {
+                    modalImg.style.display = 'block';
+                    modalImg.src = certSrc;
+                    modalImg.onerror = function() {
+                        console.error('Failed to load image:', certSrc);
+                    };
+                }
+                // Show rotate/zoom controls for images
+                if (certControls) certControls.style.display = 'flex';
+            }
+            
+            // Reset rotation and zoom
+            currentRotation = 0;
+            currentZoom = 1;
+            updateImageTransform();
+            
+            // Show modal
+            certModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeBtn = certModal.querySelector('.cert-modal-close');
+    const overlay = certModal.querySelector('.cert-modal-overlay');
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
     }
-    if (e.key === '+' || e.key === '=') {
-        e.preventDefault();
-        zoomInBtn.click();
+    if (overlay) {
+        overlay.addEventListener('click', closeModal);
     }
-    if (e.key === '-') {
-        e.preventDefault();
-        zoomOutBtn.click();
+
+    // Rotate certificate
+    const rotateBtn = certModal.querySelector('.cert-rotate-btn');
+    if (rotateBtn) {
+        rotateBtn.addEventListener('click', function() {
+            currentRotation += 90;
+            if (currentRotation >= 360) currentRotation = 0;
+            updateImageTransform();
+        });
     }
+
+    // Reset rotation
+    const resetBtn = certModal.querySelector('.cert-reset-btn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function() {
+            currentRotation = 0;
+            currentZoom = 1;
+            updateImageTransform();
+        });
+    }
+
+    // Zoom in
+    const zoomInBtn = certModal.querySelector('.cert-zoom-in-btn');
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', function() {
+            currentZoom = Math.min(currentZoom + 0.25, 3);
+            updateImageTransform();
+        });
+    }
+
+    // Zoom out
+    const zoomOutBtn = certModal.querySelector('.cert-zoom-out-btn');
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', function() {
+            currentZoom = Math.max(currentZoom - 0.25, 0.5);
+            updateImageTransform();
+        });
+    }
+
+    // Keyboard shortcuts for modal
+    document.addEventListener('keydown', function(e) {
+        if (!certModal || !certModal.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+        if (e.key === 'r' || e.key === 'R') {
+            e.preventDefault();
+            if (rotateBtn) rotateBtn.click();
+        }
+        if (e.key === '0') {
+            e.preventDefault();
+            if (resetBtn) resetBtn.click();
+        }
+        if (e.key === '+' || e.key === '=') {
+            e.preventDefault();
+            if (zoomInBtn) zoomInBtn.click();
+        }
+        if (e.key === '-') {
+            e.preventDefault();
+            if (zoomOutBtn) zoomOutBtn.click();
+        }
+    });
 });
