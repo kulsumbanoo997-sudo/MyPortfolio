@@ -1,3 +1,16 @@
+// Page Loader
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }, 800);
+    }
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -39,8 +52,270 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Elements we want to reveal
-const revealSelectors = ['.animate-fade-up', '.education-card', '.project-card', '.about-content', '.cert-card'];
+const revealSelectors = ['.animate-fade-up', '.education-card', '.about-content', '.cert-card', '.project-card', '.skill-category', '.experience-card', '.resume-content'];
 document.querySelectorAll(revealSelectors.join(',')).forEach(el => {
     el.classList.add('pre-reveal');
     observer.observe(el);
+});
+
+// Typewriter effect for hero name
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.textContent = '';
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+// Initialize typewriter effect when hero section is visible
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const typewriterElement = document.querySelector('.typewriter-text');
+            if (typewriterElement && !typewriterElement.dataset.typed) {
+                typewriterElement.dataset.typed = 'true';
+                const originalText = typewriterElement.textContent || 'Kulsum Banoo';
+                typeWriter(typewriterElement, originalText, 150);
+            }
+            heroObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+    heroObserver.observe(heroSection);
+}
+
+// Scroll Progress Indicator
+window.addEventListener('scroll', function() {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.pageYOffset / windowHeight) * 100;
+    const progressBar = document.querySelector('.scroll-progress');
+    if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+    }
+    
+    // Show/hide scroll to top button
+    const scrollTopBtn = document.querySelector('.scroll-to-top');
+    if (scrollTopBtn) {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    }
+});
+
+// Scroll to Top Button
+const scrollTopBtn = document.querySelector('.scroll-to-top');
+if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Custom Cursor
+const cursor = document.querySelector('.custom-cursor');
+const cursorTrail = document.querySelector('.cursor-trail');
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
+
+if (cursor && cursorTrail && window.innerWidth > 768) {
+    function updateCursor() {
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+        
+        // Smooth trail animation
+        trailX += (mouseX - trailX) * 0.15;
+        trailY += (mouseY - trailY) * 0.15;
+        cursorTrail.style.left = trailX + 'px';
+        cursorTrail.style.top = trailY + 'px';
+        cursorTrail.style.opacity = '0.6';
+        
+        requestAnimationFrame(updateCursor);
+    }
+    
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    updateCursor();
+    
+    // Hover effects on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .education-card, .contact-link');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            if (cursor) cursor.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            if (cursor) cursor.classList.remove('hover');
+        });
+    });
+}
+
+// Add subtle parallax effect on scroll
+let ticking = false;
+window.addEventListener('scroll', function() {
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            const scrolled = window.pageYOffset;
+            
+            // Parallax for particles (subtle effect)
+            const particles = document.querySelectorAll('.particle');
+            particles.forEach((particle, index) => {
+                const speed = 0.05 + (index % 3) * 0.02;
+                const offset = scrolled * speed;
+                particle.style.transform = `translateY(${offset}px)`;
+            });
+            
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
+// 3D Tilt Effect on Cards
+const cards = document.querySelectorAll('.project-card, .education-card, .experience-card, .skill-category');
+cards.forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+    });
+});
+
+// Certificate Gallery Modal
+const certModal = document.getElementById('certModal');
+const certCards = document.querySelectorAll('.cert-card');
+let currentRotation = 0;
+let currentZoom = 1;
+
+// Open modal on card click
+certCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const certSrc = this.dataset.cert;
+        const certTitle = this.dataset.title;
+        const certIssuer = this.dataset.issuer;
+        const certDesc = this.dataset.desc;
+        
+        const modal = document.getElementById('certModal');
+        const modalImg = modal.querySelector('.cert-image');
+        const modalTitle = modal.querySelector('.cert-modal-title');
+        const modalIssuer = modal.querySelector('.cert-modal-issuer');
+        const modalDesc = modal.querySelector('.cert-modal-desc');
+        const downloadBtn = modal.querySelector('.cert-download-btn');
+        
+        modalImg.src = certSrc;
+        modalTitle.textContent = certTitle;
+        modalIssuer.textContent = certIssuer;
+        modalDesc.textContent = certDesc;
+        downloadBtn.href = certSrc;
+        downloadBtn.download = certTitle.replace(/\s+/g, '_') + '.pdf';
+        
+        // Reset rotation and zoom
+        currentRotation = 0;
+        currentZoom = 1;
+        updateImageTransform();
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close modal
+const closeModal = () => {
+    certModal.classList.remove('active');
+    document.body.style.overflow = '';
+    currentRotation = 0;
+    currentZoom = 1;
+};
+
+certModal.querySelector('.cert-modal-close').addEventListener('click', closeModal);
+certModal.querySelector('.cert-modal-overlay').addEventListener('click', closeModal);
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && certModal.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Rotate certificate
+const rotateBtn = certModal.querySelector('.cert-rotate-btn');
+rotateBtn.addEventListener('click', function() {
+    currentRotation += 90;
+    if (currentRotation >= 360) currentRotation = 0;
+    updateImageTransform();
+});
+
+// Reset rotation
+const resetBtn = certModal.querySelector('.cert-reset-btn');
+resetBtn.addEventListener('click', function() {
+    currentRotation = 0;
+    currentZoom = 1;
+    updateImageTransform();
+});
+
+// Zoom in
+const zoomInBtn = certModal.querySelector('.cert-zoom-in-btn');
+zoomInBtn.addEventListener('click', function() {
+    currentZoom = Math.min(currentZoom + 0.25, 3);
+    updateImageTransform();
+});
+
+// Zoom out
+const zoomOutBtn = certModal.querySelector('.cert-zoom-out-btn');
+zoomOutBtn.addEventListener('click', function() {
+    currentZoom = Math.max(currentZoom - 0.25, 0.5);
+    updateImageTransform();
+});
+
+// Update image transform
+function updateImageTransform() {
+    const certImage = certModal.querySelector('.cert-image');
+    certImage.style.transform = `rotate(${currentRotation}deg) scale(${currentZoom})`;
+}
+
+// Keyboard shortcuts for modal
+document.addEventListener('keydown', function(e) {
+    if (!certModal.classList.contains('active')) return;
+    
+    if (e.key === 'r' || e.key === 'R') {
+        e.preventDefault();
+        rotateBtn.click();
+    }
+    if (e.key === '0') {
+        e.preventDefault();
+        resetBtn.click();
+    }
+    if (e.key === '+' || e.key === '=') {
+        e.preventDefault();
+        zoomInBtn.click();
+    }
+    if (e.key === '-') {
+        e.preventDefault();
+        zoomOutBtn.click();
+    }
 });

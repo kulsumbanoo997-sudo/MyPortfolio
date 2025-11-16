@@ -7,6 +7,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Loading Portfolio...</p>
+        </div>
+    </div>
+    
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-trail"></div>
+    
+    <!-- Animated Background Particles -->
+    <div class="animated-bg">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Floating Scroll to Top Button -->
+    <button class="scroll-to-top" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -14,7 +48,11 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -22,24 +60,91 @@
 
     <!-- Hero Section (unique & original) -->
     <section id="home" class="hero">
+        <!-- Animated Background Shapes -->
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        
         <div class="container hero-grid">
             <div class="hero-left animate-fade-up">
-                <p class="eyebrow">Hello, I'm</p>
-                <h1 class="hero-name">Kulsum Banoo</h1>
-                <p class="tagline">MCA Student | Developer | Learner</p>
+                <div class="hero-badge">
+                    <span class="badge-icon">👋</span>
+                    <span class="badge-text">Available for opportunities</span>
+                </div>
+                
+                <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    Hello, I'm
+                </p>
+                
+                <h1 class="hero-name">
+                    <span class="name-gradient typewriter-text">Kulsum Banoo</span>
+                    <span class="name-decoration">✨</span>
+                </h1>
+                
+                <div class="tagline-wrapper">
+                    <p class="tagline">
+                        <span class="tagline-item">MCA Student</span>
+                        <span class="tagline-separator">|</span>
+                        <span class="tagline-item">Developer</span>
+                        <span class="tagline-separator">|</span>
+                        <span class="tagline-item">Learner</span>
+                    </p>
+                </div>
 
-                <p class="hero-desc">I turn mathematical thinking into data-driven software. Currently exploring applied machine learning, data visualization, and full-stack development.</p>
+                <p class="hero-desc">
+                    I turn <span class="highlight-text">mathematical thinking</span> into 
+                    <span class="highlight-text">data-driven software</span>. Currently exploring 
+                    applied machine learning, data visualization, and full-stack development.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years Learning</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Curiosity</div>
+                    </div>
+                </div>
 
                 <div class="hero-ctas">
-                    <a class="btn btn-primary" href="#projects">View Projects</a>
-                    <a class="btn btn-outline" href="#contact">Contact Me</a>
+                    <a class="btn btn-primary" href="#projects">
+                        <span>View Projects</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a class="btn btn-outline" href="#contact">
+                        <span>Contact Me</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
 
             <div class="hero-right animate-fade-up delay-1">
-                <div class="profile-ig-frame" aria-hidden>
-                    <div class="profile-ig-inner">
-                        <img src="docs/pic.jpg" alt="Profile photo of Kulsum Banoo" class="profile-ig-img" />
+                <div class="profile-container">
+                    <div class="profile-glow"></div>
+                    <div class="profile-ig-frame" aria-hidden>
+                        <div class="profile-ig-inner">
+                            <img src="docs/pic.jpg" alt="Profile photo of Kulsum Banoo" class="profile-ig-img" />
+                        </div>
+                    </div>
+                    <div class="floating-icons">
+                        <div class="floating-icon icon-1">💻</div>
+                        <div class="floating-icon icon-2">📊</div>
+                        <div class="floating-icon icon-3">🚀</div>
+                        <div class="floating-icon icon-4">⚡</div>
                     </div>
                 </div>
             </div>
@@ -64,26 +169,212 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Jupyter Notebook</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">LeetCode</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
             <h2>Education</h2>
             <div class="education-grid">
                 <div class="education-card">
-                    <h3>Master of Computer Applications (MCA)</h3>
-                    <p class="institution">Currently Pursuing</p>
+                    <h3>MCA in Artificial Intelligence & Machine Learning</h3>
+                    <p class="institution">K.R. Mangalam University, Gurugram | 2025 – Present</p>
                     <p class="details">
-                        Advanced study in computer applications, software development, and emerging technologies.
+                        Currently pursuing Master of Computer Applications with specialization in Artificial Intelligence 
+                        and Machine Learning, focusing on advanced AI models, ML algorithms, and data-driven computing.
                     </p>
                 </div>
                 <div class="education-card">
-                    <h3>Bachelor of Science - Mathematics (Honours)</h3>
-                    <p class="institution">Delhi University</p>
+                    <h3>B.Sc. Mathematics (Hons)</h3>
+                    <p class="institution">Shyama Prasad Mukherji College for Women, Delhi University | 2021 – 2024</p>
                     <p class="details">
-                        Comprehensive study in mathematics covering algebra, calculus, analysis, and computational mathematics.
+                        Completed Bachelor of Science in Mathematics (Honours) with comprehensive study in algebra, 
+                        calculus, analysis, and computational mathematics.
+                    </p>
+                    <p class="cgpa">CGPA: 6.514</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="projects-bg-decoration">
+            <div class="project-shape shape-1"></div>
+            <div class="project-shape shape-2"></div>
+            <div class="project-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="projects-header">
+                <h2>Featured Projects</h2>
+                <p class="projects-subtitle">Explore my work and creative solutions</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="ml">
+                    <div class="project-thumb">
+                        <div class="project-icon-wrapper">
+                            <div class="project-icon">🤖</div>
+                            <div class="project-glow"></div>
+                        </div>
+                        <div class="project-badge">ML</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>Machine Learning Project</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="View Project" aria-label="View project">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">Applied machine learning algorithms to solve real-world data problems. Explored various ML models and data preprocessing techniques.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">ML</span>
+                                <span class="tech-tag">Data Science</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-thumb">
+                        <div class="project-icon-wrapper">
+                            <div class="project-icon">🌐</div>
+                            <div class="project-glow"></div>
+                        </div>
+                        <div class="project-badge">Web</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>Portfolio Website</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="View Project" aria-label="View project">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">A responsive portfolio website showcasing my skills, education, and projects. Built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="data">
+                    <div class="project-thumb">
+                        <div class="project-icon-wrapper">
+                            <div class="project-icon">📊</div>
+                            <div class="project-glow"></div>
+                        </div>
+                        <div class="project-badge">Data</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-header">
+                            <h3>Data Analysis Project</h3>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon" title="View Project" aria-label="View project">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                        <polyline points="15 3 21 3 21 9"/>
+                                        <line x1="10" y1="14" x2="21" y2="3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-desc">Analyzed datasets using Python libraries to extract insights and create visualizations for better understanding.</p>
+                        <div class="project-footer">
+                            <div class="project-tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Master of Computer Applications (MCA)</h3>
+                        <span class="experience-date">2025 – Present</span>
+                    </div>
+                    <p class="experience-company">K.R. Mangalam University, Gurugram</p>
+                    <p class="experience-details">
+                        I am currently pursuing my MCA in Artificial Intelligence and Machine Learning, focusing on 
+                        gaining hands-on experience with AI models, machine learning algorithms, and data-driven 
+                        problem-solving techniques.
+                    </p>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Bachelor's Degree in Mathematics (Hons)</h3>
+                        <span class="experience-date">2021 – 2024</span>
+                    </div>
+                    <p class="experience-company">Delhi University</p>
+                    <p class="experience-details">
+                        I completed my Bachelor's degree in Mathematics (Hons) from Delhi University, where I developed 
+                        strong analytical and problem-solving skills and applied mathematical concepts to computational 
+                        problems and data analysis.
                     </p>
                 </div>
             </div>
+            <p class="experience-note">
+                <em>(Project details are showcased in the Projects section.)</em>
+            </p>
         </div>
     </section>
 
@@ -92,27 +383,181 @@
         <div class="container">
             <h2>Certifications</h2>
             <div class="cert-grid">
-                <div class="cert-card">
-                    <h3>IBM - Machine Learning</h3>
-                    <p class="institution">IBM (Professional Certificate)</p>
-                    <p class="details">Practical introduction to machine learning concepts and workflows.</p>
-                    <div class="cert-actions">
-                        <a class="contact-link" href="docs/certificate_ML_rotated.pdf" target="_blank" rel="noopener">View / Download Certificate</a>
+                <div class="cert-card" data-cert="docs/certificate_ML_rotated.pdf" data-title="IBM - Machine Learning" data-issuer="IBM (Professional Certificate)" data-desc="Practical introduction to machine learning concepts and workflows.">
+                    <div class="cert-thumbnail">
+                        <div class="cert-preview">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <div class="cert-overlay">
+                            <span class="view-icon">👁️</span>
+                            <span class="view-text">Click to View</span>
+                        </div>
+                    </div>
+                    <div class="cert-body">
+                        <h3>IBM - Machine Learning</h3>
+                        <p class="institution">IBM (Professional Certificate)</p>
+                        <p class="details">Practical introduction to machine learning concepts and workflows.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Certificate Modal -->
+    <div class="cert-modal" id="certModal">
+        <div class="cert-modal-overlay"></div>
+        <div class="cert-modal-content">
+            <button class="cert-modal-close" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div class="cert-modal-header">
+                <h3 class="cert-modal-title"></h3>
+                <p class="cert-modal-issuer"></p>
+            </div>
+            <div class="cert-modal-body">
+                <div class="cert-image-container">
+                    <img class="cert-image" src="" alt="Certificate" />
+                    <div class="cert-controls">
+                        <button class="cert-rotate-btn" title="Rotate 90°">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                            </svg>
+                        </button>
+                        <button class="cert-reset-btn" title="Reset Rotation">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                                <path d="M21 3v5h-5"/>
+                                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                                <path d="M3 21v-5h5"/>
+                            </svg>
+                        </button>
+                        <button class="cert-zoom-in-btn" title="Zoom In">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                                <line x1="11" y1="8" x2="11" y2="14"/>
+                                <line x1="8" y1="11" x2="14" y2="11"/>
+                            </svg>
+                        </button>
+                        <button class="cert-zoom-out-btn" title="Zoom Out">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.35-4.35"/>
+                                <line x1="8" y1="11" x2="14" y2="11"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <p class="cert-modal-desc"></p>
+            </div>
+            <div class="cert-modal-footer">
+                <a class="btn btn-primary cert-download-btn" download>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download Certificate
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            <div class="resume-content">
+                <p class="resume-text">
+                    Download my complete resume to learn more about my education, skills, experience, and projects.
+                </p>
+                <div class="resume-actions">
+                    <a href="docs/resume.pdf" class="btn btn-primary" target="_blank" rel="noopener" download>
+                        📄 Download Resume (PDF)
+                    </a>
+                    <a href="docs/resume.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+                        👁️ View Resume
+                    </a>
+                </div>
+                <p class="resume-note">
+                    <small>Note: If you don't have a resume file yet, you can create one and place it in the <code>docs/</code> folder as <code>resume.pdf</code></small>
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
+        <div class="contact-bg-elements">
+            <div class="contact-circle circle-1"></div>
+            <div class="contact-circle circle-2"></div>
+            <div class="contact-circle circle-3"></div>
+        </div>
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-text">I'd love to hear from you! Feel free to reach out.</p>
+            <div class="contact-header">
+                <h2>Get In Touch</h2>
+                <p class="contact-text">
+                    <span class="contact-emoji">💬</span>
+                    I'd love to hear from you! Feel free to reach out.
+                    <span class="contact-emoji">✨</span>
+                </p>
+            </div>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-link">Email</a>
-                <a href="https://linkedin.com" class="contact-link" target="_blank">LinkedIn</a>
-                <a href="https://github.com" class="contact-link" target="_blank">GitHub</a>
+                <a href="mailto:kulsumbanoo997@gmail.com" class="contact-link" data-platform="email">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </div>
+                    <span class="contact-label">Email</span>
+                    <span class="contact-handle">kulsumbanoo997@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/kulsum-banoo-367019397/" class="contact-link" target="_blank" data-platform="linkedin">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                        </svg>
+                    </div>
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-handle">Connect with me</span>
+                </a>
+                <a href="https://github.com" class="contact-link" target="_blank" data-platform="github">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-handle">View my code</span>
+                </a>
+                <a href="https://leetcode.com/u/kulsum_997/" class="contact-link" target="_blank" data-platform="leetcode">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662L2.571 9.149c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.152-4.152c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.466.467 1.111.662 1.824.662s1.357-.195 1.823-.662l2.697-2.607c.467-.467 1.111-.645 1.837-.645s1.357.195 1.823.662l4.153 4.152c.467.467.702 1.15.702 1.863s-.235 1.357-.702 1.824L16.102 17.93zM13.037 10.774l2.643-2.643c.467-.467.702-1.111.702-1.824s-.235-1.357-.702-1.824l-4.152-4.152c-.467-.467-1.111-.702-1.824-.702s-1.357.235-1.823.702L2.573 7.55c-.467.467-.645 1.111-.645 1.824s.178 1.357.645 1.823l5.21 5.209c.467.467 1.111.702 1.824.702s1.357-.235 1.823-.702l2.643-2.643c.467-.467.702-1.111.702-1.824s-.235-1.357-.702-1.824z"/>
+                        </svg>
+                    </div>
+                    <span class="contact-label">LeetCode</span>
+                    <span class="contact-handle">Check my solutions</span>
+                </a>
+                <a href="https://www.geeksforgeeks.org/user/kulsumbakqje/" class="contact-link" target="_blank" data-platform="geeksforgeeks">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <span class="contact-label">GeeksforGeeks</span>
+                    <span class="contact-handle">See my articles</span>
+                </a>
             </div>
         </div>
     </section>
