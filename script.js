@@ -236,13 +236,32 @@ certCards.forEach(card => {
         const certDesc = this.dataset.desc;
         
         const modal = document.getElementById('certModal');
+        const modalPdfViewer = modal.querySelector('.cert-pdf-viewer');
         const modalImg = modal.querySelector('.cert-image');
         const modalTitle = modal.querySelector('.cert-modal-title');
         const modalIssuer = modal.querySelector('.cert-modal-issuer');
         const modalDesc = modal.querySelector('.cert-modal-desc');
         const downloadBtn = modal.querySelector('.cert-download-btn');
         
-        modalImg.src = certSrc;
+        const certControls = modal.querySelector('.cert-controls');
+        
+        // Check if it's a PDF file
+        if (certSrc.toLowerCase().endsWith('.pdf')) {
+            // Show PDF viewer, hide image
+            modalPdfViewer.style.display = 'block';
+            modalImg.style.display = 'none';
+            modalPdfViewer.src = certSrc + '#toolbar=0&navpanes=0&scrollbar=1';
+            // Hide rotate/zoom controls for PDFs (browser handles navigation)
+            if (certControls) certControls.style.display = 'none';
+        } else {
+            // Show image, hide PDF viewer
+            modalPdfViewer.style.display = 'none';
+            modalImg.style.display = 'block';
+            modalImg.src = certSrc;
+            // Show rotate/zoom controls for images
+            if (certControls) certControls.style.display = 'flex';
+        }
+        
         modalTitle.textContent = certTitle;
         modalIssuer.textContent = certIssuer;
         modalDesc.textContent = certDesc;
@@ -310,7 +329,10 @@ zoomOutBtn.addEventListener('click', function() {
 // Update image transform
 function updateImageTransform() {
     const certImage = certModal.querySelector('.cert-image');
-    certImage.style.transform = `rotate(${currentRotation}deg) scale(${currentZoom})`;
+    if (certImage && certImage.style.display !== 'none') {
+        certImage.style.transform = `rotate(${currentRotation}deg) scale(${currentZoom})`;
+    }
+    // Note: PDF rotation/zoom is handled by browser's PDF viewer controls
 }
 
 // Keyboard shortcuts for modal
