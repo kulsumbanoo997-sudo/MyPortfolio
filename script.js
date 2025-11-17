@@ -91,26 +91,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Intersection Observer for fade-in animations
+// Enhanced Intersection Observer for scroll animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
+            // Add staggered animation for child elements
+            const children = entry.target.querySelectorAll('.animate-on-scroll');
+            children.forEach((child, index) => {
+                setTimeout(() => {
+                    child.classList.add('is-visible');
+                }, index * 100);
+            });
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Elements we want to reveal (exclude hero section elements)
-const revealSelectors = ['.education-card', '.about-content', '.cert-card', '.project-card', '.skill-category', '.experience-card', '.resume-content'];
+// Enhanced reveal selectors - all major containers
+const revealSelectors = [
+    '.about-content',
+    '.about-item',
+    '.about-skills',
+    '.key-skill-item',
+    '.education-card',
+    '.skill-category',
+    '.project-card',
+    '.experience-card',
+    '.cert-card',
+    '.resume-content',
+    '.contact-form-wrapper',
+    '.contact-links-wrapper',
+    '.contact-link',
+    'section > .container > h2' // Section headings
+];
+
 document.querySelectorAll(revealSelectors.join(',')).forEach(el => {
     el.classList.add('pre-reveal');
     observer.observe(el);
+});
+
+// Animate section headings with delay
+document.querySelectorAll('section > .container > h2').forEach((heading, index) => {
+    heading.style.transitionDelay = `${index * 0.1}s`;
 });
 
 // Handle hero section elements separately - make them visible immediately if in viewport
@@ -126,39 +154,38 @@ document.querySelectorAll('.hero .animate-fade-up').forEach(el => {
     }
 });
 
-// Typewriter effect for hero name
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.textContent = '';
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
+// Rotating words animation for hero subtitle
+function initRotatingWords() {
+    const wordsContainer = document.querySelector('.rotating-words');
+    if (!wordsContainer) return;
+    
+    const words = wordsContainer.querySelectorAll('.word');
+    if (words.length === 0) return;
+    
+    let currentIndex = 0;
+    
+    function rotateWord() {
+        // Remove active class from all words
+        words.forEach(word => word.classList.remove('active'));
+        
+        // Add active class to current word
+        words[currentIndex].classList.add('active');
+        
+        // Move to next word
+        currentIndex = (currentIndex + 1) % words.length;
     }
-    type();
+    
+    // Start rotation
+    rotateWord();
+    
+    // Rotate every 3 seconds
+    setInterval(rotateWord, 3000);
 }
 
-// Initialize typewriter effect when hero section is visible
-const heroObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const typewriterElement = document.querySelector('.typewriter-text');
-            if (typewriterElement && !typewriterElement.dataset.typed) {
-                typewriterElement.dataset.typed = 'true';
-                const originalText = typewriterElement.textContent || 'Kulsum Banoo';
-                typeWriter(typewriterElement, originalText, 150);
-            }
-            heroObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.3 });
-
-const heroSection = document.querySelector('.hero');
-if (heroSection) {
-    heroObserver.observe(heroSection);
-}
+// Initialize rotating words when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initRotatingWords();
+});
 
 // Scroll Progress Indicator
 window.addEventListener('scroll', function() {
@@ -243,26 +270,6 @@ if (cursor && cursorTrail && window.innerWidth > 768) {
     });
 }
 
-// Add subtle parallax effect on scroll
-let ticking = false;
-window.addEventListener('scroll', function() {
-    if (!ticking) {
-        window.requestAnimationFrame(function() {
-            const scrolled = window.pageYOffset;
-            
-            // Parallax for particles (subtle effect)
-            const particles = document.querySelectorAll('.particle');
-            particles.forEach((particle, index) => {
-                const speed = 0.05 + (index % 3) * 0.02;
-                const offset = scrolled * speed;
-                particle.style.transform = `translateY(${offset}px)`;
-            });
-            
-            ticking = false;
-        });
-        ticking = true;
-    }
-});
 
 // Enhanced 3D Tilt Effect on Cards
 const cards = document.querySelectorAll('.project-card, .education-card, .experience-card, .skill-category');

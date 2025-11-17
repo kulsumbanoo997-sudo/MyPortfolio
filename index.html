@@ -12,17 +12,21 @@
     <meta property="og:title" content="Kulsum Banoo - Portfolio | MCA Student | AI & ML Developer">
     <meta property="og:description" content="MCA Student specializing in AI & ML | Mathematics Graduate | Developer | Portfolio showcasing skills, projects, and achievements">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kulsumbanoo.github.io">
-    <meta property="og:image" content="https://kulsumbanoo.github.io/docs/profile%20pic.jpg">
+    <meta property="og:url" content="https://kulsumbanoo.vercel.app">
+    <meta property="og:image" content="https://kulsumbanoo.vercel.app/docs/profile%20pic.jpg">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kulsum Banoo - Portfolio | MCA Student | AI & ML Developer">
     <meta name="twitter:description" content="MCA Student specializing in AI & ML | Mathematics Graduate | Developer | Portfolio showcasing skills, projects, and achievements">
-    <meta name="twitter:image" content="https://kulsumbanoo.github.io/docs/profile%20pic.jpg">
+    <meta name="twitter:image" content="https://kulsumbanoo.vercel.app/docs/profile%20pic.jpg">
     
     <title>Kulsum Banoo - Portfolio | MCA Student | AI & ML Developer</title>
-    <link rel="canonical" href="https://kulsumbanoo.github.io">
+    <link rel="canonical" href="https://kulsumbanoo.vercel.app">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/docs/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/docs/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,18 +39,6 @@
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     <div class="cursor-trail"></div>
-    
-    <!-- Animated Background Particles -->
-    <div class="animated-bg">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
     
     <!-- Floating Scroll to Top Button -->
     <button class="scroll-to-top" aria-label="Scroll to top">
@@ -78,91 +70,93 @@
         </div>
     </nav>
 
-    <!-- Hero Section (unique & original) -->
+    <!-- Hero Section - Modern Redesign -->
     <section id="home" class="hero">
-        <!-- Animated Background Shapes -->
-        <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-        </div>
-        
-        <div class="container hero-grid">
-            <div class="hero-left animate-fade-up">
-                <div class="hero-badge">
-                    <span class="badge-text">Available for opportunities</span>
+        <div class="container hero-container">
+            <!-- Left Content -->
+            <div class="hero-content">
+                <div class="hero-greeting">
+                    <span class="greeting-text">Hi there, I'm</span>
                 </div>
                 
-                <p class="eyebrow">
-                    <span class="eyebrow-line"></span>
-                    Hello, I'm
-                </p>
-                
-                <h1 class="hero-name">
-                    <span class="name-gradient typewriter-text">Kulsum Banoo</span>
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="title-main">Kulsum</span>
+                    </span>
+                    <span class="title-line">
+                        <span class="title-main gradient-text">Banoo</span>
+                    </span>
                 </h1>
                 
-                <div class="tagline-wrapper">
-                    <p class="tagline">
-                        <span class="tagline-item">MCA Student</span>
-                        <span class="tagline-separator">|</span>
-                        <span class="tagline-item">Developer</span>
-                        <span class="tagline-separator">|</span>
-                        <span class="tagline-item">Learner</span>
-                    </p>
+                <div class="hero-subtitle">
+                    <span class="subtitle-text">MCA Student | Full Stack Developer | AI/ML Enthusiast</span>
                 </div>
 
-                <p class="hero-desc">
-                    I turn <span class="highlight-text">mathematical thinking</span> into 
-                    <span class="highlight-text">data-driven software</span>. Currently exploring 
-                    applied machine learning, data visualization, and full-stack development.
+                <p class="hero-description">
+                    MCA Student passionate about transforming complex problems into elegant solutions. 
+                    Specializing in <strong>machine learning</strong>, <strong>data visualization</strong>, 
+                    and <strong>full-stack development</strong>.
                 </p>
 
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">Years Learning</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Curiosity</div>
-                    </div>
-                </div>
-
-                <div class="hero-ctas">
-                    <a class="btn btn-primary" href="#projects">
+                <!-- Action Buttons -->
+                <div class="hero-actions">
+                    <a href="#projects" class="action-btn primary-btn">
                         <span>View Projects</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a class="btn btn-outline" href="#contact">
-                        <span>Contact Me</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    <a href="#resume" class="action-btn secondary-btn">
+                        <span>Download Resume</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
                         </svg>
                     </a>
                 </div>
+
+                <!-- Quick Stats -->
+                <div class="hero-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value">2+</div>
+                        <div class="metric-label">Years Experience</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">10+</div>
+                        <div class="metric-label">Projects Completed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">∞</div>
+                        <div class="metric-label">Passion for Learning</div>
+                    </div>
+                </div>
             </div>
 
-            <div class="hero-right animate-fade-up delay-1">
-                <div class="profile-container">
-                    <div class="profile-glow"></div>
-                <div class="profile-ig-frame" aria-hidden>
-                    <div class="profile-ig-inner">
-                        <img src="docs/profile pic.jpg" alt="Profile photo of Kulsum Banoo" class="profile-ig-img" />
-                        </div>
+            <!-- Right Visual -->
+            <div class="hero-visual">
+                <div class="visual-wrapper">
+                    <div class="profile-image-container">
+                        <div class="image-glow"></div>
+                        <div class="image-border"></div>
+                        <img src="docs/profile pic.jpg" alt="Kulsum Banoo" class="profile-image" />
                     </div>
-                    <div class="floating-icons">
-                        <div class="floating-icon icon-1">💻</div>
-                        <div class="floating-icon icon-2">📊</div>
-                        <div class="floating-icon icon-3">🚀</div>
-                        <div class="floating-icon icon-4">⚡</div>
+                    <div class="floating-elements">
+                        <div class="float-element element-1">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="float-element element-2">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            </svg>
+                        </div>
+                        <div class="float-element element-3">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,26 +168,77 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>
-                    I'm a passionate MCA student specializing in <strong>Artificial Intelligence & Machine Learning</strong>, 
-                    with a unique background in <strong>Mathematics (Hons)</strong> from Delhi University. My journey from 
-                    solving complex mathematical problems to building intelligent systems has given me a distinctive perspective 
-                    on data-driven solutions.
-                </p>
-                <p>
-                    Beyond academics, I'm an active sports enthusiast with achievements in <strong>handball, volleyball, and shotput</strong> 
-                    at regional and national levels. This competitive spirit translates into my work—I approach coding challenges 
-                    with the same determination and strategic thinking I bring to the field.
-                </p>
-                <p>
-                    Currently, I'm exploring the intersection of <strong>mathematical modeling and machine learning</strong>, 
-                    building projects that solve real-world problems. When I'm not coding, you'll find me on LeetCode sharpening 
-                    my problem-solving skills or contributing to open-source projects on GitHub.
-                </p>
-                <p>
-                    I'm always excited to collaborate on innovative projects and learn from fellow developers. Let's connect 
-                    and build something amazing together!
-                </p>
+                <!-- Professional Summary -->
+                <div class="about-summary">
+                    <p>
+                        I'm a passionate <strong>MCA student specializing in Artificial Intelligence & Machine Learning</strong> 
+                        with a unique background in <strong>Mathematics (Hons)</strong> from Delhi University. My journey from 
+                        solving complex mathematical problems to building intelligent systems has given me a distinctive perspective 
+                        on data-driven solutions.
+                    </p>
+                </div>
+
+                <!-- Interests, Expertise & Career Goals -->
+                <div class="about-details">
+                    <div class="about-item">
+                        <h3>🎯 Career Goals</h3>
+                        <p>
+                            My goal is to become a <strong>Machine Learning Engineer</strong> who bridges the gap between 
+                            mathematical theory and practical AI applications. I aim to work on cutting-edge projects that 
+                            solve real-world problems using data science and machine learning.
+                        </p>
+                    </div>
+                    
+                    <div class="about-item">
+                        <h3>💡 Expertise</h3>
+                        <p>
+                            I specialize in <strong>machine learning algorithms</strong>, <strong>data analysis</strong>, 
+                            and <strong>full-stack web development</strong>. My mathematical background enables me to understand 
+                            complex algorithms deeply, while my programming skills allow me to implement them effectively.
+                        </p>
+                    </div>
+                    
+                    <div class="about-item">
+                        <h3>🌟 Interests</h3>
+                        <p>
+                            Beyond coding, I'm an active <strong>sports enthusiast</strong> with achievements in handball, 
+                            volleyball, and shotput at regional and national levels. I also enjoy solving algorithmic problems 
+                            on <strong>LeetCode</strong> and contributing to <strong>open-source projects</strong> on GitHub.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Key Skills Highlighted -->
+                <div class="about-skills">
+                    <h3>Key Skills</h3>
+                    <div class="key-skills-grid">
+                        <div class="key-skill-item">
+                            <div class="key-skill-icon">🤖</div>
+                            <h4>Machine Learning</h4>
+                            <p>Building and deploying ML models for real-world applications</p>
+                        </div>
+                        <div class="key-skill-item">
+                            <div class="key-skill-icon">📊</div>
+                            <h4>Data Analysis</h4>
+                            <p>Extracting insights from complex datasets using Python</p>
+                        </div>
+                        <div class="key-skill-item">
+                            <div class="key-skill-icon">💻</div>
+                            <h4>Full-Stack Development</h4>
+                            <p>Building responsive web applications with modern technologies</p>
+                        </div>
+                        <div class="key-skill-item">
+                            <div class="key-skill-icon">🔢</div>
+                            <h4>Mathematical Modeling</h4>
+                            <p>Applying mathematical concepts to solve computational problems</p>
+                        </div>
+                        <div class="key-skill-item">
+                            <div class="key-skill-icon">⚡</div>
+                            <h4>Problem Solving</h4>
+                            <p>Strong analytical skills for tackling complex challenges</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -203,32 +248,71 @@
         <div class="container">
             <h2>Skills</h2>
             <div class="skills-grid">
+                <!-- Programming Languages -->
                 <div class="skill-category">
-                    <h3>Programming Languages</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">💻</div>
+                        <h3>Programming Languages</h3>
+                    </div>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">Java</span>
                         <span class="skill-tag">C++</span>
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">SQL</span>
                     </div>
                 </div>
+
+                <!-- Frameworks & Libraries -->
                 <div class="skill-category">
-                    <h3>Technologies & Frameworks</h3>
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">⚙️</div>
+                        <h3>Frameworks & Libraries</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">🛠️</div>
+                        <h3>Tools & Technologies</h3>
+                    </div>
+                    <div class="skill-tags">
                         <span class="skill-tag">Git</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skill-tags">
+                        <span class="skill-tag">GitHub</span>
                         <span class="skill-tag">VS Code</span>
                         <span class="skill-tag">Jupyter Notebook</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">LeetCode</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon">🤝</div>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Adaptability</span>
+                        <span class="skill-tag">Leadership</span>
+                        <span class="skill-tag">Critical Thinking</span>
                     </div>
                 </div>
             </div>
@@ -240,23 +324,65 @@
         <div class="container">
             <h2>Education</h2>
             <div class="education-grid">
+                <!-- MCA -->
                 <div class="education-card">
+                    <div class="education-degree-icon">🎓</div>
                     <h3>MCA in Artificial Intelligence & Machine Learning</h3>
-                    <p class="institution">K.R. Mangalam University, Gurugram | 2025 – Present</p>
+                    <p class="institution">K.R. Mangalam University, Gurugram</p>
+                    <p class="education-period">2025 – Present</p>
                     <p class="details">
                         Currently pursuing Master of Computer Applications with specialization in Artificial Intelligence 
                         and Machine Learning, focusing on advanced AI models, ML algorithms, and data-driven computing.
                     </p>
+                    
+                    <!-- Relevant Coursework -->
+                    <div class="coursework-section">
+                        <h4>Relevant Coursework</h4>
+                        <div class="coursework-tags">
+                            <span class="coursework-tag">Machine Learning</span>
+                            <span class="coursework-tag">Deep Learning</span>
+                            <span class="coursework-tag">Data Mining</span>
+                            <span class="coursework-tag">Neural Networks</span>
+                            <span class="coursework-tag">Natural Language Processing</span>
+                            <span class="coursework-tag">Computer Vision</span>
+                            <span class="coursework-tag">Data Structures & Algorithms</span>
+                            <span class="coursework-tag">Database Management Systems</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- B.Sc. Mathematics -->
                 <div class="education-card">
+                    <div class="education-degree-icon">📚</div>
                     <h3>B.Sc. Mathematics (Hons)</h3>
-                    <p class="institution">Shyama Prasad Mukherji College for Women, Delhi University | 2021 – 2024</p>
+                    <p class="institution">Shyama Prasad Mukherji College for Women, Delhi University</p>
+                    <p class="education-period">2021 – 2024</p>
                     <p class="details">
                         Completed Bachelor of Science in Mathematics (Honours) with comprehensive study in algebra, 
                         calculus, analysis, and computational mathematics.
                     </p>
                     <p class="cgpa">CGPA: 6.514</p>
+                    
+                    <!-- Relevant Coursework -->
+                    <div class="coursework-section">
+                        <h4>Relevant Coursework</h4>
+                        <div class="coursework-tags">
+                            <span class="coursework-tag">Linear Algebra</span>
+                            <span class="coursework-tag">Calculus & Analysis</span>
+                            <span class="coursework-tag">Differential Equations</span>
+                            <span class="coursework-tag">Probability & Statistics</span>
+                            <span class="coursework-tag">Number Theory</span>
+                            <span class="coursework-tag">Computational Mathematics</span>
+                            <span class="coursework-tag">Mathematical Modeling</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Note about Certifications -->
+            <div class="education-note">
+                <p>📜 <strong>Certifications:</strong> I have earned multiple certifications in Machine Learning, Data Science, and various academic achievements. 
+                <a href="#certifications" class="cert-link">View all certifications →</a></p>
             </div>
         </div>
     </section>
@@ -293,6 +419,14 @@
                                 <span class="tech-tag">ML</span>
                                 <span class="tech-tag">Data Science</span>
                             </div>
+                            <div class="project-links">
+                                <a href="https://github.com/kulsumbanoo" target="_blank" rel="noopener" class="project-link github-link" title="View on GitHub">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -315,6 +449,20 @@
                                 <span class="tech-tag">CSS</span>
                                 <span class="tech-tag">JavaScript</span>
                             </div>
+                            <div class="project-links">
+                                <a href="https://github.com/kulsumbanoo" target="_blank" rel="noopener" class="project-link github-link" title="View on GitHub">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://kulsumbanoo.github.io" target="_blank" rel="noopener" class="project-link demo-link" title="Live Demo">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                    <span>Live Demo</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -336,6 +484,14 @@
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">Pandas</span>
                                 <span class="tech-tag">Visualization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/kulsumbanoo" target="_blank" rel="noopener" class="project-link github-link" title="View on GitHub">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span>GitHub</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -886,16 +1042,38 @@
         <div class="container">
             <h2>Resume</h2>
             <div class="resume-content">
+                <div class="resume-icon-wrapper">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
                 <p class="resume-text">
-                    Download my complete resume to learn more about my education, skills, experience, and projects.
+                    Download my complete resume to learn more about my education, skills, experience, and projects. 
+                    My resume is regularly updated with the latest achievements and qualifications.
                 </p>
                 <div class="resume-actions">
                     <a href="docs/kulsumResume.pdf" class="btn btn-primary" target="_blank" rel="noopener" download>
-                        📄 Download Resume (PDF)
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span>Download Resume (PDF)</span>
                     </a>
                     <a href="docs/kulsumResume.pdf" class="btn btn-outline" target="_blank" rel="noopener">
-                        👁️ View Resume
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <span>View Resume</span>
                     </a>
+                </div>
+                <div class="resume-info">
+                    <p class="resume-updated">📅 <strong>Last Updated:</strong> <span id="resume-date">January 2025</span></p>
                 </div>
             </div>
         </div>
@@ -917,6 +1095,36 @@
                     <span class="contact-emoji">✨</span>
                 </p>
             </div>
+            <div class="contact-inner">
+                <div class="contact-form-wrapper">
+                    <h3>Send me a message</h3>
+                    <!-- Formspree Setup: Replace YOUR_FORM_ID with your actual Formspree form ID -->
+                    <!-- Get your form ID from: https://formspree.io/ - Sign up, create a form, and copy the form ID -->
+                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <p class="form-note">Or reach out directly via the links below</p>
+                    </form>
+                </div>
+                <div class="contact-links-wrapper">
+                    <h3>Connect with me</h3>
             <div class="contact-links">
                 <a href="mailto:kulsumbanoo997@gmail.com" class="contact-link" data-platform="email">
                     <div class="contact-icon">
@@ -928,6 +1136,16 @@
                     <span class="contact-label">Email</span>
                     <span class="contact-handle">kulsumbanoo997@gmail.com</span>
                 </a>
+                <!-- Phone Link (Optional - Uncomment and add your phone number) -->
+                <!-- <a href="tel:+91YOUR_PHONE_NUMBER" class="contact-link" data-platform="phone">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <span class="contact-label">Phone</span>
+                    <span class="contact-handle">+91 YOUR_PHONE_NUMBER</span>
+                </a> -->
                 <a href="https://www.linkedin.com/in/kulsum-banoo-367019397/" class="contact-link" target="_blank" data-platform="linkedin">
                     <div class="contact-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -937,14 +1155,14 @@
                     <span class="contact-label">LinkedIn</span>
                     <span class="contact-handle">Connect with me</span>
                 </a>
-                <a href="https://github.com/kulsumbanoo" class="contact-link" target="_blank" rel="noopener" data-platform="github">
+                <a href="https://github.com/kulsumbanoo997-sudo/MyPortfolio" class="contact-link" target="_blank" rel="noopener" data-platform="github">
                     <div class="contact-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                     </div>
                     <span class="contact-label">GitHub</span>
-                    <span class="contact-handle">View my code</span>
+                    <span class="contact-handle">View my repository</span>
                 </a>
                 <a href="https://leetcode.com/u/kulsum_997/" class="contact-link" target="_blank" data-platform="leetcode">
                     <div class="contact-icon">
@@ -964,6 +1182,29 @@
                     <span class="contact-label">GeeksforGeeks</span>
                     <span class="contact-handle">See my articles</span>
                 </a>
+                <a href="https://kulsumbanoo.vercel.app/" class="contact-link" target="_blank" rel="noopener" data-platform="portfolio">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <span class="contact-label">Portfolio</span>
+                    <span class="contact-handle">Visit my website</span>
+                </a>
+                <!-- HackerRank Link (Optional - Uncomment and add your username if applicable) -->
+                <!-- <a href="https://www.hackerrank.com/YOUR_HACKERRANK_USERNAME" class="contact-link" target="_blank" data-platform="hackerrank">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M0 0v24h24V0zm9.95 8.002h1.805c.061 0 .111.05.111.111v7.767c0 .061-.05.111-.11.111H9.95a.111.111 0 01-.111-.11v-2.87H7.894v2.87c0 .06-.05.11-.11.11H5.976a.11.11 0 01-.11-.11V8.112c0-.06.05-.11.11-.11h1.806c.061 0 .11.05.11.11v2.869H9.84v-2.87c0-.06.05-.11.11-.11zm2.999 0h5.778c.06 0 .111.05.111.11v7.767a.11.11 0 01-.11.112h-1.806a.11.11 0 01-.11-.11v-6.755h-2.853v6.755a.11.11 0 01-.11.111h-1.805a.11.11 0 01-.111-.11V8.111c0-.06.05-.11.11-.11z"/>
+                        </svg>
+                    </div>
+                    <span class="contact-label">HackerRank</span>
+                    <span class="contact-handle">View my profile</span>
+                </a> -->
+            </div>
+                </div>
             </div>
         </div>
     </section>
