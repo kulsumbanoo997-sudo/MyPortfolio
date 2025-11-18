@@ -1,49 +1,40 @@
-/* Clean, neutral (grayscale) stylesheet for Kulsum Banoo's portfolio */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Smooth Scroll Behavior */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Account for fixed navbar */
+  scroll-padding-top: 80px;
 }
 
 :root {
-  /* Dark Theme - Consistent Color Palette (4 colors max) */
-  /* Primary Green */
   --primary-color: #4ade80;
   --accent-color: #22c55e;
   --accent-dark: #16a34a;
   --accent-light: #4ade80;
   
-  /* Neutral Colors */
   --text-color: #e5e5e5;
   --muted-text: #a3a3a3;
   --background: #0a0a0a;
   --card-bg: #1a1a1a;
   --white: #ffffff;
   
-  /* Spacing System - Consistent */
-  --spacing-xs: 0.5rem;    /* 8px */
-  --spacing-sm: 1rem;      /* 16px */
-  --spacing-md: 1.5rem;    /* 24px */
-  --spacing-lg: 2rem;      /* 32px */
-  --spacing-xl: 3rem;      /* 48px */
-  --spacing-2xl: 4rem;     /* 64px */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
   
-  /* Section Padding */
   --section-padding: 80px 20px;
   --section-padding-mobile: 60px 20px;
   
-  /* Border Radius */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   
-  /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
@@ -71,7 +62,6 @@ body {
   }
 }
 
-/* Scroll Progress Indicator - Enhanced with Gradient */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -85,7 +75,6 @@ body {
   box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
 }
 
-/* Custom Cursor - Enhanced Creative Design */
 .custom-cursor {
   position: fixed;
   width: 20px;
@@ -119,7 +108,6 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* Scroll to Top Button - Enhanced Creative Design */
 .scroll-to-top {
   position: fixed;
   bottom: 30px;
@@ -176,7 +164,6 @@ body {
   width: 100%;
 }
 
-/* Global layout tweaks */
 html, body { 
   height: 100%; 
 }
@@ -185,14 +172,12 @@ main {
   display: block; 
 }
 
-/* Consistent Section Spacing with Creative Dividers */
 section { 
   padding: var(--section-padding); 
   position: relative;
   overflow: hidden;
 }
 
-/* Creative Section Dividers */
 section::before {
   content: '';
   position: absolute;
@@ -206,20 +191,19 @@ section::before {
     rgba(74, 222, 128, 0.4) 50%, 
     rgba(34, 197, 94, 0.2) 80%, 
     transparent 100%);
-  opacity: 0.5;
-}
+    opacity: 0.5;
+  }
 
 section:first-child::before {
   display: none;
-}
+  }
 
 @media (max-width: 768px) {
-  section {
+section { 
     padding: var(--section-padding-mobile);
   }
 }
 
-/* Standard section heading */
 h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
@@ -248,7 +232,6 @@ h2::after {
   to { width: 60px; }
 }
 
-/* Navigation - Simple Clean Design */
 .navbar {
   background: #1a1a1a;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -287,7 +270,6 @@ h2::after {
   color: var(--primary-color);
 }
 
-/* Mobile Menu Toggle Button */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -382,7 +364,6 @@ h2::after {
 .brand { display: flex; align-items: center; gap: 10px; }
 .brand-mark { opacity: 0.9; }
 
-/* Hero Section - Modern Redesign with Creative Background */
 .hero {
   background: var(--background);
   background-image: 
@@ -400,7 +381,6 @@ h2::after {
   overflow: hidden;
 }
 
-/* Animated Background Shapes */
 .hero::before {
   content: '';
   position: absolute;
@@ -438,7 +418,6 @@ h2::after {
   }
 }
 
-/* Hero Grid Layout */
 .hero-container {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -446,8 +425,18 @@ h2::after {
   align-items: center;
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+/* Desktop: Wider hero section */
+@media (min-width: 1400px) {
+  .hero-container {
+    max-width: 1600px;
+    gap: 5rem;
+  }
 }
 
 .hero-content {
@@ -455,7 +444,6 @@ h2::after {
   z-index: 2;
 }
 
-/* Hero Content Styles */
 .hero-greeting {
   margin-bottom: 1rem;
   animation: fadeInUp 0.6s ease-out;
@@ -567,7 +555,6 @@ h2::after {
   font-weight: 600;
 }
 
-/* Hero Actions */
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -640,7 +627,6 @@ h2::after {
   box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
 }
 
-/* Hero Metrics */
 .hero-metrics {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -704,7 +690,6 @@ h2::after {
   font-weight: 500;
 }
 
-/* Hero Visual Section */
 .hero-visual {
   position: relative;
   z-index: 2;
@@ -820,7 +805,7 @@ h2::after {
 @keyframes float-around {
   0%, 100% {
     transform: translate(0, 0) rotate(0deg);
-  }
+}
   25% {
     transform: translate(20px, -20px) rotate(90deg);
   }
@@ -832,7 +817,6 @@ h2::after {
   }
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 10px 18px;
@@ -881,7 +865,6 @@ h2::after {
   color: white;
 }
 
-/* Hero-specific styles (unique, original look) */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr minmax(180px, 320px);
@@ -1347,6 +1330,44 @@ h2::after {
   gap: 3rem; 
   align-items: start; 
   margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+@media (min-width: 1200px) {
+  .contact-inner {
+    gap: 4rem;
+    grid-template-columns: 1.3fr 1fr;
+    max-width: 1400px;
+  }
+}
+
+.contact-form-wrapper {
+  animation: fadeInUp 0.6s ease-out;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.contact-links-wrapper {
+  animation: fadeInUp 0.8s ease-out;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-form-wrapper h3,
@@ -1355,6 +1376,28 @@ h2::after {
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   font-weight: 700;
+  text-align: left;
+}
+
+.contact-form-wrapper {
+  padding-right: 1rem;
+}
+
+.contact-links-wrapper {
+  padding-left: 1rem;
+}
+
+@media (max-width: 900px) {
+  .contact-form-wrapper,
+  .contact-links-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .contact-form-wrapper h3,
+  .contact-links-wrapper h3 {
+    text-align: center;
+  }
 }
 
 .contact-form {
@@ -1379,6 +1422,7 @@ h2::after {
 .contact-form input, 
 .contact-form textarea { 
   width: 100%; 
+  max-width: 100%;
   padding: 12px 16px; 
   border: 1px solid rgba(255, 255, 255, 0.1); 
   border-radius: 8px; 
@@ -1387,6 +1431,7 @@ h2::after {
   color: var(--text-color);
   transition: all 0.3s ease;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 .contact-form input:hover,
@@ -1428,10 +1473,14 @@ h2::after {
 .contact-links-wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 @media (max-width: 900px) {
-  .contact-inner { grid-template-columns: 1fr; }
+  .contact-inner { 
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+  }
   .hero-grid { grid-template-columns: 1fr; }
   .profile-placeholder { max-width: 160px; margin: 0 auto; }
 }
@@ -1484,7 +1533,6 @@ h2::after {
   }
 }
 
-/* About Section - Enhanced */
 .about {
   padding: var(--section-padding);
   background: var(--background);
@@ -1527,7 +1575,6 @@ h2::after {
   line-height: 1.7;
 }
 
-/* Professional Summary */
 .about-summary {
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
@@ -1540,7 +1587,6 @@ h2::after {
   color: var(--text-color);
 }
 
-/* About Details - Interests, Expertise, Career Goals */
 .about-details {
   display: grid;
   gap: 2rem;
@@ -1574,7 +1620,6 @@ h2::after {
   margin: 0;
 }
 
-/* Key Skills Section */
 .about-skills {
   margin-top: 3rem;
   padding-top: 2.5rem;
@@ -1646,7 +1691,6 @@ h2::after {
   }
 }
 
-/* Education Section - Enhanced */
 .education { 
   padding: var(--section-padding);
   position: relative;
@@ -1777,7 +1821,6 @@ h2::after {
   border: 1px solid rgba(34, 197, 94, 0.2);
 }
 
-/* Coursework Section */
 .coursework-section {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
@@ -1815,7 +1858,6 @@ h2::after {
   border-color: rgba(34, 197, 94, 0.4);
 }
 
-/* Education Note */
 .education-note {
   margin-top: 3rem;
   padding: 1.5rem;
@@ -1849,7 +1891,6 @@ h2::after {
   text-decoration: underline;
 }
 
-/* Skills Section - Enhanced */
 .skills { 
   padding: var(--section-padding); 
   background: var(--background);
@@ -1869,7 +1910,26 @@ h2::after {
   animation: pulse 7s ease-in-out infinite;
   animation-delay: 1s;
 }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.skills-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 2rem; 
+}
+
+/* Desktop: 2 columns for skills */
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
 .skill-category { 
   background: var(--card-bg); 
   padding: 1.5rem;
@@ -1974,7 +2034,6 @@ h2::after {
 
 /* Removed unused skill progress bars styles */
 
-/* Projects Section */
 .projects { 
   padding: var(--section-padding); 
   background: var(--background);
@@ -1982,7 +2041,6 @@ h2::after {
   overflow: hidden;
 }
 
-/* Projects Background Decoration */
 .projects-bg-decoration {
   position: absolute;
   inset: 0;
@@ -2053,10 +2111,25 @@ h2::after {
   z-index: 1;
 }
 
+/* Desktop: 2-3 columns for projects */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+
 .project-card { 
   background: var(--card-bg); 
   border-radius: 16px; 
-  overflow: hidden;
+  overflow: hidden; 
   border: 1px solid rgba(255, 255, 255, 0.1); 
   box-shadow: 0 8px 30px rgba(34,197,94,0.1);
   display: flex; 
@@ -2156,7 +2229,6 @@ h2::after {
 }
 
 
-/* Project Thumbnail */
 .project-thumb { 
   position: relative;
   background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(74, 222, 128, 0.05)); 
@@ -2166,6 +2238,23 @@ h2::after {
   justify-content: center; 
   min-height: 180px;
   overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  z-index: 2;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 .project-icon-wrapper {
@@ -2234,7 +2323,6 @@ h2::after {
   50% { transform: translateY(-5px); }
 }
 
-/* Project Body */
 .project-body { 
   padding: 1.5rem; 
   display: flex; 
@@ -2344,7 +2432,6 @@ h2::after {
   66% { transform: translate(-20px, 30px) scale(0.9); }
 }
 
-/* Experience Section - Enhanced */
 .experience { 
   padding: var(--section-padding); 
   background: var(--background);
@@ -2456,7 +2543,6 @@ h2::after {
 
 /* Removed unused experience-note */
 
-/* Certifications - Enhanced Creative */
 .certifications { 
   padding: var(--section-padding); 
   background: var(--background);
@@ -2464,7 +2550,6 @@ h2::after {
   overflow: hidden;
 }
 
-/* Animated Background Decorations */
 .certifications::before {
   content: '';
   position: absolute;
@@ -2490,7 +2575,6 @@ h2::after {
 }
 
 
-/* Certificate Categories - Enhanced */
 .cert-category {
   margin-bottom: 3rem;
   position: relative;
@@ -2544,7 +2628,6 @@ h2::after {
   animation: expand-line 0.8s ease-out;
 }
 
-/* Certificate Subsections - Enhanced */
 .cert-subsection {
   margin-bottom: 2rem;
   margin-left: 1rem;
@@ -2903,7 +2986,6 @@ h2::after {
   margin: 0;
 }
 
-/* Certificate Modal */
 .cert-modal {
   position: fixed;
   inset: 0;
@@ -3159,7 +3241,6 @@ h2::after {
   }
 }
 
-/* Resume Section - Enhanced */
 .resume { 
   padding: var(--section-padding); 
   background: var(--background);
@@ -3292,7 +3373,6 @@ h2::after {
   font-family: 'Courier New', monospace;
 }
 
-/* Section Dividers */
 section {
   position: relative;
   z-index: 1;
@@ -3308,7 +3388,6 @@ section:not(:first-child)::before {
   background: linear-gradient(90deg, transparent, rgba(34,197,94,0.3), transparent);
 }
 
-/* Contact Section */
 .contact { 
   padding: var(--section-padding); 
   text-align: center; 
@@ -3317,7 +3396,13 @@ section:not(:first-child)::before {
   background: var(--background);
 }
 
-/* Contact Background Elements */
+.contact .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+}
+
 .contact-bg-elements {
   position: absolute;
   inset: 0;
@@ -3402,11 +3487,10 @@ section:not(:first-child)::before {
 }
 
 .contact-links { 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
   position: relative;
   z-index: 1;
 }
@@ -3569,7 +3653,6 @@ section:not(:first-child)::before {
   background: linear-gradient(135deg, #22c55e, #4ade80);
 }
 
-/* Footer */
 .footer { 
   background: linear-gradient(135deg, rgba(240, 253, 244, 0.8), rgba(255, 255, 255, 0.95), rgba(220, 252, 231, 0.8)); 
   color: var(--muted-text); 
@@ -3779,11 +3862,8 @@ section:not(:first-child)::before {
   }
 }
 
-/* Animations */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Responsive */
-/* Mobile Menu Styles */
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: flex;
@@ -3870,11 +3950,6 @@ section:not(:first-child)::before {
   }
 }
 
-/* ============================================
-   COMPREHENSIVE RESPONSIVE DESIGN SYSTEM
-   ============================================ */
-
-/* Desktop View (1280px & above) - Default styles already set */
 @media (min-width: 1280px) {
   .container {
     max-width: 1200px;
@@ -3910,7 +3985,6 @@ section:not(:first-child)::before {
   }
 }
 
-/* Tablet View (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .container {
     max-width: 100%;
@@ -4009,7 +4083,6 @@ section:not(:first-child)::before {
   }
 }
 
-/* Mobile View (300px - 480px) */
 @media (max-width: 767px) {
   .container {
     padding: 0 var(--spacing-sm);
@@ -4301,7 +4374,6 @@ section:not(:first-child)::before {
   }
 }
 
-/* Extra Small Mobile (300px - 360px) */
 @media (max-width: 360px) {
   .container {
     padding: 0 var(--spacing-xs);
