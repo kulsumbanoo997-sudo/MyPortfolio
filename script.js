@@ -1,8 +1,5 @@
-// portfolio js
-// smooth scrolling stuff
-// might add more animations later idk
-
-// smooth scroll for nav links
+// portfolio javascript
+// smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -16,7 +13,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
 // navbar changes on scroll
 window.addEventListener('scroll', function() {
     var nav = document.querySelector('.navbar');
-    // var test = 123; // was testing
     if (nav) {
         if (window.scrollY > 40) {
             nav.classList.add('scrolled');
@@ -26,13 +22,12 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// mobile menu stuff
+// mobile menu
 document.addEventListener('DOMContentLoaded', function() {
     var menuBtn = document.querySelector('.mobile-menu-toggle');
     var menu = document.querySelector('.nav-links');
     var navbar = document.querySelector('.navbar');
     var navLinks = document.querySelectorAll('.nav-links a');
-    // var testMenu = null; // forgot to remove
     
     if (!menuBtn || !menu) return;
     
@@ -80,8 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// fade in stuff when scrolling
-// tried 0.2 for threshold but 0.15 looks better
+// fade in elements when scrolling
 var observerOptions = {
     threshold: 0.15,
     rootMargin: '0px 0px -50px 0px'
@@ -102,9 +96,8 @@ var observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// stuff that should fade in
+// elements that should fade in
 var elements = '.about-content, .about-item, .about-skills, .key-skill-item, .education-card, .skill-category, .project-card, .experience-card, .cert-card, .resume-content, .contact-form-wrapper, .contact-links-wrapper, .contact-link, section > .container > h2';
-// var oldElements = '.old-class'; // old code
 
 document.querySelectorAll(elements).forEach(function(el) {
     el.classList.add('pre-reveal');
@@ -127,7 +120,7 @@ document.querySelectorAll('.hero .animate-fade-up').forEach(function(el) {
     }
 });
 
-// rotating words thing
+// rotating words
 function rotateWords() {
     var container = document.querySelector('.rotating-words');
     if (!container) return;
@@ -144,7 +137,7 @@ function rotateWords() {
     }
     
     next();
-    setInterval(next, 3000); // 3 seconds
+    setInterval(next, 3000);
 }
 
 document.addEventListener('DOMContentLoaded', rotateWords);

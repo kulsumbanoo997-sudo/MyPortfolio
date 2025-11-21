@@ -9,14 +9,14 @@
     <meta name="author" content="Kulsum Banoo">
     <meta name="robots" content="index, follow">
     
-    <!-- social sharing stuff -->
+    <!-- social media -->
     <meta property="og:title" content="Kulsum Banoo - Portfolio | MCA Student | AI & ML Developer">
     <meta property="og:description" content="MCA Student specializing in AI & ML | Mathematics Graduate | Developer | Portfolio showcasing skills, projects, and achievements">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kulsumbanoo.vercel.app">
     <meta property="og:image" content="https://kulsumbanoo.vercel.app/docs/profile%20pic.jpg">
     
-    <!-- twitter stuff -->
+    <!-- twitter cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kulsum Banoo - Portfolio | MCA Student | AI & ML Developer">
     <meta name="twitter:description" content="MCA Student specializing in AI & ML | Mathematics Graduate | Developer | Portfolio showcasing skills, projects, and achievements">
@@ -299,6 +299,59 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- HTML Lists example: Ordered List -->
+            <div class="skills-list-demo" style="display: none;">
+                <ol>
+                    <li>Programming Languages</li>
+                    <li>Frameworks & Libraries</li>
+                    <li>Tools & Technologies</li>
+                    <li>Soft Skills</li>
+                </ol>
+            </div>
+            
+            <!-- HTML Table example -->
+            <div class="skills-table-wrapper" style="display: none;">
+                <table class="skills-table">
+                    <thead>
+                        <tr>
+                            <th>Skill Category</th>
+                            <th>Technologies</th>
+                            <th>Experience Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Programming</td>
+                            <td>Python, JavaScript, Java</td>
+                            <td>Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>ML/AI</td>
+                            <td>TensorFlow, Scikit-learn</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>Web Dev</td>
+                            <td>React, Node.js</td>
+                            <td>Intermediate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- HTML Multimedia examples -->
+            <div class="multimedia-demo" style="display: none;">
+                <video width="320" height="240" controls>
+                    <source src="demo.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+                <audio controls>
+                    <source src="demo.mp3" type="audio/mpeg">
+                    Your browser does not support audio.
+                </audio>
+                <iframe src="https://example.com" width="100%" height="400" title="Example Frame"></iframe>
+            </div>
         </div>
     </section>
 
@@ -308,6 +361,9 @@
             <div class="education-grid">
                 <div class="education-card">
                     <div class="education-degree-icon">🎓</div>
+                    <div class="education-image">
+                        <img src="docs/krm.webp" alt="K.R. Mangalam University" class="edu-img" onerror="this.style.display='none';">
+                    </div>
                     <h3>MCA in Artificial Intelligence & Machine Learning</h3>
                     <p class="institution">K.R. Mangalam University, Gurugram</p>
                     <p class="education-period">2025 – Present</p>
@@ -333,6 +389,9 @@
 
                 <div class="education-card">
                     <div class="education-degree-icon">📚</div>
+                    <div class="education-image">
+                        <img src="docs/DU.jpg" alt="Delhi University" class="edu-img" onerror="this.style.display='none';">
+                    </div>
                     <h3>B.Sc. Mathematics (Hons)</h3>
                     <p class="institution">Shyama Prasad Mukherji College for Women, Delhi University</p>
                     <p class="education-period">2021 – 2024</p>
@@ -594,16 +653,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -622,16 +680,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -645,16 +702,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -668,16 +724,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -691,16 +746,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -714,16 +768,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -737,16 +790,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -766,16 +818,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -789,16 +840,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -821,16 +871,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -844,16 +893,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -867,16 +915,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -896,16 +943,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -919,16 +965,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -942,16 +987,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -965,16 +1009,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
@@ -988,16 +1031,15 @@
                             <div class="cert-thumbnail">
                                 <div class="cert-preview">
                                     <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                                        <path d="M12 14v7"/>
+                                        <path d="M9 18l3-3 3 3"/>
                                     </svg>
                                 </div>
                                 <div class="cert-overlay">
-                                    <span class="view-icon"></span>
-                                    <span class="view-text">Click to View</span>
+                                    <span class="view-icon">👁️</span>
+                                    <span class="view-text">View Certificate</span>
                                 </div>
                             </div>
                             <div class="cert-body">
