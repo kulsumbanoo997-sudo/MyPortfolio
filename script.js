@@ -75,74 +75,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// fade in elements when scrolling
-var observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            var children = entry.target.querySelectorAll('.animate-on-scroll');
-            children.forEach(function(child, i) {
-                setTimeout(function() {
-                    child.classList.add('is-visible');
-                }, i * 100);
-            });
-            observer.unobserve(entry.target);
+// back to top button - simple functionality
+var topBtn = document.querySelector('.scroll-to-top');
+if (topBtn) {
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            topBtn.style.display = 'block';
+        } else {
+            topBtn.style.display = 'none';
         }
     });
-}, observerOptions);
-
-// elements that should fade in
-var elements = '.about-content, .about-item, .about-skills, .key-skill-item, .education-card, .skill-category, .project-card, .experience-card, .cert-card, .resume-content, .contact-form-wrapper, .contact-links-wrapper, .contact-link, section > .container > h2';
-
-document.querySelectorAll(elements).forEach(function(el) {
-    el.classList.add('pre-reveal');
-    observer.observe(el);
-});
-
-// headings animation delay
-document.querySelectorAll('section > .container > h2').forEach(function(h, i) {
-    h.style.transitionDelay = (i * 0.1) + 's';
-});
-
-// hero animations
-document.querySelectorAll('.hero .animate-fade-up').forEach(function(el) {
-    var rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('is-visible');
-    } else {
-        el.classList.add('pre-reveal');
-        observer.observe(el);
-    }
-});
-
-// rotating words
-function rotateWords() {
-    var container = document.querySelector('.rotating-words');
-    if (!container) return;
     
-    var words = container.querySelectorAll('.word');
-    if (words.length === 0) return;
-    
-    var index = 0;
-    
-    function next() {
-        words.forEach(function(w) { w.classList.remove('active'); });
-        words[index].classList.add('active');
-        index = (index + 1) % words.length;
-    }
-    
-    next();
-    setInterval(next, 3000);
+    topBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }
 
-document.addEventListener('DOMContentLoaded', rotateWords);
-
-// progress bar at top
+// scroll progress bar - simple functionality
 window.addEventListener('scroll', function() {
     var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     var scrolled = (window.pageYOffset / total) * 100;
@@ -150,91 +99,6 @@ window.addEventListener('scroll', function() {
     if (bar) {
         bar.style.width = scrolled + '%';
     }
-    
-    // back to top button
-    var topBtn = document.querySelector('.scroll-to-top');
-    if (topBtn) {
-        if (window.pageYOffset > 300) {
-            topBtn.classList.add('visible');
-        } else {
-            topBtn.classList.remove('visible');
-        }
-    }
-});
-
-// back to top
-var topBtn = document.querySelector('.scroll-to-top');
-if (topBtn) {
-    topBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
-// custom cursor for desktop
-var cursor = document.querySelector('.custom-cursor');
-var trail = document.querySelector('.cursor-trail');
-var mx = 0, my = 0, tx = 0, ty = 0;
-
-if (cursor && trail && window.innerWidth > 768) {
-    function updateCursor() {
-        if (cursor) {
-            cursor.style.left = mx + 'px';
-            cursor.style.top = my + 'px';
-        }
-        tx += (mx - tx) * 0.12;
-        ty += (my - ty) * 0.12;
-        if (trail) {
-            trail.style.left = tx + 'px';
-            trail.style.top = ty + 'px';
-            trail.style.opacity = '0.7';
-        }
-        requestAnimationFrame(updateCursor);
-    }
-    
-    document.addEventListener('mousemove', function(e) {
-        mx = e.clientX;
-        my = e.clientY;
-    });
-    
-    updateCursor();
-    
-    // cursor gets bigger on hover
-    var interactive = document.querySelectorAll('a, button, .btn, .skill-tag, .project-card, .education-card, .experience-card, .contact-link, .cert-card');
-    interactive.forEach(function(el) {
-        el.addEventListener('mouseenter', function() {
-            if (cursor) {
-                cursor.classList.add('hover');
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            }
-        });
-        el.addEventListener('mouseleave', function() {
-            if (cursor) {
-                cursor.classList.remove('hover');
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            }
-        });
-    });
-}
-
-// card tilt on hover
-var cards = document.querySelectorAll('.project-card, .education-card, .experience-card, .skill-category');
-cards.forEach(function(card) {
-    card.addEventListener('mousemove', function(e) {
-        var rect = card.getBoundingClientRect();
-        var x = e.clientX - rect.left;
-        var y = e.clientY - rect.top;
-        var centerX = rect.width / 2;
-        var centerY = rect.height / 2;
-        var rotateX = (y - centerY) / 15;
-        var rotateY = (centerX - x) / 15;
-        card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-10px) scale(1.03)';
-        card.style.transition = 'none';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        card.style.transform = '';
-        card.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
 });
 
 // cert modal popup
